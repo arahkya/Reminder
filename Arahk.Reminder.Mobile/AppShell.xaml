@@ -8,7 +8,7 @@
     Title="Arahk.Reminder.Mobile">
 
     <ShellContent
-        Title="Home"
+        Title="Reminder"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 

@@ -10,4 +10,11 @@ public partial class MainPage : ContentPage
         this.BindingContext = new MainPageModel(Navigation);
         InitializeComponent();
     }
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+
+        await ((MainPageModel)BindingContext).LoadReminderItems();
+    }
 }
