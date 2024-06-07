@@ -1,0 +1,6 @@
+@Arahk.Reminder.WebApi_HostAddress = http://localhost:5182
+
+GET {{Arahk.Reminder.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
