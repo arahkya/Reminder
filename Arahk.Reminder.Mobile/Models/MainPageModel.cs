@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using Arahk.Reminder.Mobile.Services;
 using Arahk.Reminder.Mobile.Views;
 
 namespace Arahk.Reminder.Mobile.Models;
@@ -10,10 +11,10 @@ public class MainPageModel
     public ReminderListModel ReminderList { get; set; }
     public Command NavToReminderEntryViewCommand { get; set; }
 
-    public MainPageModel(INavigation navigator)
+    public MainPageModel(INavigation navigator,ReminderService reminderService)
     {
         _navigator = navigator;
-        ReminderList = new ReminderListModel();
+        ReminderList = new ReminderListModel(reminderService);
         NavToReminderEntryViewCommand = new Command(NavToReminderEntryView);
     }
 

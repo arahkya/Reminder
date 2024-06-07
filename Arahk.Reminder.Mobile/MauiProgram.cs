@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Arahk.Reminder.Mobile.Services;
+using Microsoft.Extensions.Logging;
 
 namespace Arahk.Reminder.Mobile;
 
@@ -18,7 +19,9 @@ public static class MauiProgram
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
-
+        
+        builder.Services.AddTransient<ReminderService>();
+        
         return builder.Build();
     }
 }

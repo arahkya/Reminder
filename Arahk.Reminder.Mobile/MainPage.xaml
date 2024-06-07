@@ -12,7 +12,7 @@
             Spacing="25">
             <Button
                 x:Name="CounterBtn"
-                Text="Click me" 
+                Text="Add Entry" 
                 SemanticProperties.Hint="Add Entry"
                 Command="{Binding NavToReminderEntryViewCommand}"
                 HorizontalOptions="Fill" />

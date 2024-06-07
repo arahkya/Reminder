@@ -8,7 +8,8 @@ public class ReminderService : IReminderService
     
     public async Task<IEnumerable<ReminderModel>> ListAsync(CancellationToken cancellationToken)
     {
-        for (var i = 1; i <= 10; i++)
+        _models.Clear();
+        for (var i = 1; i <= 20; i++)
         {
             await Task.Delay(10, cancellationToken);
             
