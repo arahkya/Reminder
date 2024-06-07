@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arahk.Reminder.Mobile", "Arahk.Reminder.Mobile\Arahk.Reminder.Mobile.csproj", "{EF69CC83-777D-4BE7-B4F9-F7AB1497C866}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF69CC83-777D-4BE7-B4F9-F7AB1497C866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF69CC83-777D-4BE7-B4F9-F7AB1497C866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF69CC83-777D-4BE7-B4F9-F7AB1497C866}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF69CC83-777D-4BE7-B4F9-F7AB1497C866}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
