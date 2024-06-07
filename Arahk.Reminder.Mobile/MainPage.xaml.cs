@@ -1,5 +1,4 @@
 ﻿using Arahk.Reminder.Mobile.Models;
-using Arahk.Reminder.Mobile.Views;
 
 namespace Arahk.Reminder.Mobile;
 
@@ -15,6 +14,6 @@ public partial class MainPage : ContentPage
     {
         base.OnAppearing();
 
-        await ((MainPageModel)BindingContext).LoadReminderItems();
+        await ((MainPageModel)BindingContext).InitializeAsync();
     }
 }

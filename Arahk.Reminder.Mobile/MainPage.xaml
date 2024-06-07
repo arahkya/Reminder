@@ -17,7 +17,7 @@
                 Command="{Binding NavToReminderEntryViewCommand}"
                 HorizontalOptions="Fill" />
             
-            <local-Views:ReminderListView ItemsSource="{Binding Items}"></local-Views:ReminderListView>
+            <local-Views:ReminderListView BindingContext="{Binding ReminderList}"></local-Views:ReminderListView>
         </VerticalStackLayout>
     </ScrollView>
 

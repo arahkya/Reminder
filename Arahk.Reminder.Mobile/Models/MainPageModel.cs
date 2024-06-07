@@ -6,31 +6,20 @@ namespace Arahk.Reminder.Mobile.Models;
 public class MainPageModel
 {
     private readonly INavigation _navigator;
-    public ObservableCollection<ReminderListItemModel> Items { get; set; }
+    
+    public ReminderListModel ReminderList { get; set; }
     public Command NavToReminderEntryViewCommand { get; set; }
 
     public MainPageModel(INavigation navigator)
     {
         _navigator = navigator;
+        ReminderList = new ReminderListModel();
         NavToReminderEntryViewCommand = new Command(NavToReminderEntryView);
-        Items = new ObservableCollection<ReminderListItemModel>([]);
     }
 
-    public async Task LoadReminderItems()
+    public async Task InitializeAsync()
     {
-        await Task.Delay(100);
-
-        Items.Clear();
-        
-        for (var i = 0; i < 10; i++)
-        {
-            await Task.Delay(10);
-            Items.Add(new ReminderListItemModel()
-            {
-                Title = $"Reminder Item {i}",
-                Subtitle = "Created by Someone"
-            });
-        }
+        await ReminderList.LoadReminderItemsAsync();
     }
     
     private void NavToReminderEntryView()
