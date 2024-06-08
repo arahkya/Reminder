@@ -5,20 +5,25 @@
              xmlns:local="clr-namespace:Arahk.Reminder.Mobile.Models"
              x:DataType="local:MainPageModel"
              x:Class="Arahk.Reminder.Mobile.MainPage">
-
-    <ScrollView>
-        <VerticalStackLayout
-            Padding="30,20"
-            Spacing="25">
-            <Button
-                x:Name="CounterBtn"
-                Text="Add Entry" 
-                SemanticProperties.Hint="Add Entry"
-                Command="{Binding NavToReminderEntryViewCommand}"
-                HorizontalOptions="Fill" />
-            
-            <local-Views:ReminderListView BindingContext="{Binding ReminderList}"></local-Views:ReminderListView>
-        </VerticalStackLayout>
-    </ScrollView>
-
+    
+    <Grid 
+        Padding="30,20"
+        RowSpacing="20">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Button
+            x:Name="CounterBtn"
+            Text="Add Entry" 
+            SemanticProperties.Hint="Add Entry" Command="{Binding NavToReminderEntryViewCommand}"
+            HorizontalOptions="Fill" />
+        
+        <local-Views:ReminderListView
+            Grid.Row="1"
+            BindingContext="{Binding ReminderList}"></local-Views:ReminderListView>
+    </Grid>
+    
 </ContentPage>
