@@ -41,7 +41,7 @@
             
             <Label Grid.Row="5" Text="Description"></Label>
             <Frame Grid.Row="6" BorderColor="{StaticResource Gray100}" HeightRequest="100" Padding="0" Margin="20,5,20,0">
-                <Editor VerticalOptions="Fill"></Editor>    
+                <Editor VerticalOptions="Fill" Text="{Binding Description}"></Editor>    
             </Frame>
             
             <Label Grid.Row="7" Text="Alert On"></Label>
@@ -55,7 +55,7 @@
                 <TimePicker Grid.Column="1" Time="{Binding AlertTime}"></TimePicker>
             </Grid>
             
-            <Button Grid.Row="9" Margin="20" Text="Add"></Button>
+            <Button Grid.Row="9" Margin="20" Text="Add" Command="{Binding SaveEntryCommand}"></Button>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

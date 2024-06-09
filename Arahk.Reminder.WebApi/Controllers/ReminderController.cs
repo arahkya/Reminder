@@ -19,4 +19,10 @@ public class ReminderController(ILogger<ReminderController> logger, IReminderSer
 
         return models;
     }
+
+    [HttpPost(Name = "Add Reminder Model")]
+    public async Task Post([FromBody]ReminderModel model, CancellationToken cancellationToken)
+    {
+        await _reminderService.AddAsync(model, cancellationToken);
+    }
 }

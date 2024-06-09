@@ -7,13 +7,15 @@ namespace Arahk.Reminder.Mobile.Models;
 public class MainPageModel
 {
     private readonly INavigation _navigator;
-    
+    private readonly ReminderService _reminderService;
+
     public ReminderListModel ReminderList { get; set; }
     public Command NavToReminderEntryViewCommand { get; set; }
 
     public MainPageModel(INavigation navigator,ReminderService reminderService)
     {
         _navigator = navigator;
+        _reminderService = reminderService;
         ReminderList = new ReminderListModel(reminderService);
         NavToReminderEntryViewCommand = new Command(NavToReminderEntryView);
     }
@@ -25,6 +27,6 @@ public class MainPageModel
     
     private void NavToReminderEntryView()
     {
-        this._navigator.PushAsync(new ReminderEntryView());
+        this._navigator.PushAsync(new ReminderEntryView(_reminderService));
     }
 }
