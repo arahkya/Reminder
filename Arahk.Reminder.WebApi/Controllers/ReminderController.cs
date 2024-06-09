@@ -25,4 +25,11 @@ public class ReminderController(ILogger<ReminderController> logger, IReminderSer
     {
         await _reminderService.AddAsync(model, cancellationToken);
     }
+
+    [Route("{id:int}")]
+    [HttpDelete(Name = "Delete Reminder Model")]
+    public async Task Delete(int id, CancellationToken cancellationToken)
+    {
+        await _reminderService.DeleteAsync(id, cancellationToken);
+    }
 }

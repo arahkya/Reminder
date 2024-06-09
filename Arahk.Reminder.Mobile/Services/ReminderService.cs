@@ -6,11 +6,11 @@ namespace Arahk.Reminder.Mobile.Services;
 
 public class ReminderService
 {
-#if DEBUG
+
     private const string BaseRestAddress = "http://localhost:5182";
-#else
-    private const string BaseRestAddress = "https://arahk-reminder.azurewebsites.net";
-#endif
+
+    // private const string BaseRestAddress = "https://arahk-reminder.azurewebsites.net";
+
     
     public async Task<IEnumerable<ReminderListItemModel>> ListReminderAsync(CancellationToken cancellationToken)
     {
@@ -33,6 +33,15 @@ public class ReminderService
         
         httpRequest.Content = jsonContent;
     
+        var httpResponse = await httpClient.SendAsync(httpRequest, cancellationToken);
+    
+        httpResponse.EnsureSuccessStatusCode();
+    }
+
+    public async Task DeleteReminderAsync(int id, CancellationToken cancellationToken)
+    {
+        var httpClient = new HttpClient();
+        var httpRequest = new HttpRequestMessage(HttpMethod.Delete, new Uri($"{BaseRestAddress}/Reminder/{id}"));
         var httpResponse = await httpClient.SendAsync(httpRequest, cancellationToken);
     
         httpResponse.EnsureSuccessStatusCode();

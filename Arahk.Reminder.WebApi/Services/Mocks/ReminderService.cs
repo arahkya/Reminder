@@ -34,4 +34,17 @@ public class ReminderService : IReminderService
 
         await Task.Delay(1000, cancellationToken);
     }
+
+    public async Task DeleteAsync(int id, CancellationToken cancellationToken)
+    {
+        var model = _models.SingleOrDefault(p => p.Id == id);
+
+        if (model == null)
+        {
+            await Task.Delay(10, cancellationToken);
+            return;
+        }
+
+        _models.Remove(model);
+    }
 }

@@ -6,4 +6,5 @@ public interface IReminderService
 {
     Task<IEnumerable<ReminderModel>> ListAsync(CancellationToken cancellationToken);
     Task AddAsync(ReminderModel model, CancellationToken cancellationToken);
+    Task DeleteAsync(int id, CancellationToken cancellationToken);
 }
